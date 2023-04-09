@@ -8,9 +8,9 @@ class Contact(models.Model):
                 default=uuid.uuid4,
                 editable=False
             )
-    name = models.CharField(max_length=200)
-    email = models.CharField(max_length=330)
-    phone = models.IntegerField(max_length=14)
+    name = models.CharField(max_length=200, required=False)
+    email = models.CharField(max_length=330, required=False)
+    phone = models.IntegerField(max_length=14, required=False)
 
     def __str__(self):
         return f'{self.name}'
