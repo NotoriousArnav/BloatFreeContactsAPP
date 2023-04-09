@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+	<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+	<title></title>
+
+<script src="//unpkg.com/alpinejs" defer></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<style>
+* {
+	font-family: 'Noto sans', sans-serif;
+}
+
+body {
+	margin: 2rem;
+}
+
+</style>
+
+<link rel="stylesheet" href="/static/css/pico.classless.min.css">
+
+
+</head>
+<body>
+<header>
+<hgroup>
+<h1>
+	Contacts
+</h1>
+<h2>
+	<code>Open Source</code> Alternative to Google Contacts
+</h2>
+
+</hgroup>
+<nav style="text-align: center;align-items: center; display: flex;">
+	<ul>
+		<li>
+			<a href="#1">Home</a>
+		</li>
+		<li>
+			<a href="/api/docs">API&Docs</a>
+		</li>
+		<li>
+			<a href="/admin">Admin</a>
+		</li>
+	</ul>
+	<p>
+		Press Ctrl/Cmd+F to Find Contacts
+	</p>
+	
+</nav>
+</header>
+
+		<main style="display: grid; grid-template-columns: auto auto auto; gap: 4px;">
+			{%for x in contacts%}
+				<div class="shine-bck" style="border-style: solid; padding: 8px; border-radius: 8px;">
+					<strong>
+						{{ x.name }}
+					</strong>
+					<p>
+						<a href="mailto:{{ x.email }}">{{ x.email }}</a>
+					</p>
+					<p>
+<a href="tel:+{{ x.phone }}">+{{ x.phone }}</a>
+					</p>
+				</div>
+			{%endfor%}
+		</main>
+		<footer></footer>
+</body>
+</html>
