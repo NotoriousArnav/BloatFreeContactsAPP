@@ -34,6 +34,14 @@ ALLOWED_HOSTS = [
     '127.0.0.1'
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    "web-production-67e9.up.railway.app",
+    'https://*.mydomain.com',
+    'https://*.127.0.0.1'
+]
+
+
+
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
