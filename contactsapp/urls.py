@@ -20,10 +20,9 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    static(settings.STATIC_URL, document_root=settings.STATIC_ROOT),
     path('/', include('contacts.urls')),
     path('', include('contacts.urls')),
     path('api/', include('api.urls')),
     path('api-auth/', include('rest_framework.urls')),
     path('admin/', admin.site.urls),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
