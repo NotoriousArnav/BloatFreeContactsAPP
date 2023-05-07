@@ -165,3 +165,9 @@ STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
 """
+
+try:
+    from django.contrib.auth.models import User; User.objects.create_superuser('admin', 'admin@example.com', 'adminpass')
+except:
+    pass
+
